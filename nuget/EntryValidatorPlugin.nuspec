@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Plugins.Forms.EntryValidator</id>
-    <version>1.0.20</version>
+    <version>1.0.22</version>
     <title>Entry Validator Control Plugin for Xamarin.Forms</title>
     <authors>Wilson Vargas</authors>
     <owners>Wilson Vargas</owners>
     <licenseUrl>https://github.com/wilsonvargas/EntryValidatorPlugin/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/wilsonvargas/EntryValidatorPlugin</projectUrl>
-    <iconUrl>https://github.com/wilsonvargas/EntryValidatorPlugin/blob/master/icon/icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/icon/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
           Custom control for your Xamarin.Forms project to validate entries.
