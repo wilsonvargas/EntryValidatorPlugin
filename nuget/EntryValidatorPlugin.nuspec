@@ -8,7 +8,7 @@
     <owners>Wilson Vargas</owners>
     <licenseUrl>https://github.com/wilsonvargas/EntryValidatorPlugin/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/wilsonvargas/EntryValidatorPlugin</projectUrl>
-    <iconUrl></iconUrl>
+    <iconUrl>https://github.com/wilsonvargas/EntryValidatorPlugin/blob/master/icon/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
           Custom control for your Xamarin.Forms project to validate entries.
