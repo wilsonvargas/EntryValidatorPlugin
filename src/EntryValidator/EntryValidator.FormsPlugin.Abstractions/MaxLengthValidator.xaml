@@ -13,12 +13,12 @@
     <ContentView.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="maxLength" Text="{Binding Text, Source={x:Reference maxLengthBehavior}}" Keyboard="Number"
+                <Entry x:Name="maxLength" Text="{Binding Text, Source={x:Reference maxLengthBehavior}}" Keyboard="{Binding Keyboard, Source={x:Reference maxLengthBehavior}}"
                        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference maxLengthBehavior}}"
                        Placeholder="{Binding PlaceHolder, Source={x:Reference maxLengthBehavior}}"
                        HorizontalTextAlignment="Start">
                     <Entry.Behaviors>
-                        <validator:MaxLengthValidator x:Name="maxLenghtValidator" MaxLength="{Binding MaxLength, Source={x:Reference maxLengthBehavior}}"/>
+                        <validator:MaxLengthValidatorBehavior x:Name="maxLenghtValidator" MaxLength="{Binding MaxLength, Source={x:Reference maxLengthBehavior}}"/>
                     </Entry.Behaviors>
                 </Entry>
                 <StackLayout x:Name="image">

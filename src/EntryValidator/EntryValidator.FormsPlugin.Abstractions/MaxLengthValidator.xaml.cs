@@ -179,7 +179,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
                                                          declaringType: typeof(MaxLengthValidator),
                                                          defaultValue: LayoutOptions.FillAndExpand,
                                                          defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: ShowMessagePropertyChanged);
+                                                         propertyChanged: HorizontalOptionsPropertyChanged);
 
 
         private static void HorizontalOptionsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -188,6 +188,28 @@ namespace EntryValidator.FormsPlugin.Abstractions
             control.maxLength.HorizontalOptions = (LayoutOptions)newValue;
         }
 
+
+
+        public Keyboard Keyboard
+        {
+            get { return (Keyboard)GetValue(KeyboardProperty); }
+            set { base.SetValue(KeyboardProperty, value); }
+        }
+
+        private static BindableProperty KeyboardProperty = BindableProperty.Create(
+                                                         propertyName: "Keyboard",
+                                                         returnType: typeof(Keyboard),
+                                                         declaringType: typeof(MaxLengthValidator),
+                                                         defaultValue: Keyboard.Default,
+                                                         defaultBindingMode: BindingMode.TwoWay,
+                                                         propertyChanged: KeyboardPropertyChanged);
+
+
+        private static void KeyboardPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (MaxLengthValidator)bindable;
+            control.maxLength.Keyboard = (Keyboard)newValue;
+        }
 
         #endregion
     }

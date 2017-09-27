@@ -166,6 +166,27 @@ namespace EntryValidator.FormsPlugin.Abstractions
             control.email.HorizontalOptions = (LayoutOptions)newValue;
         }
 
+        public Keyboard Keyboard
+        {
+            get { return (Keyboard)GetValue(KeyboardProperty); }
+            set { base.SetValue(KeyboardProperty, value); }
+        }
+
+        private static BindableProperty KeyboardProperty = BindableProperty.Create(
+                                                         propertyName: "Keyboard",
+                                                         returnType: typeof(Keyboard),
+                                                         declaringType: typeof(EmailValidator),
+                                                         defaultValue: Keyboard.Email,
+                                                         defaultBindingMode: BindingMode.TwoWay,
+                                                         propertyChanged: KeyboardPropertyChanged);
+
+
+        private static void KeyboardPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (EmailValidator)bindable;
+            control.email.Keyboard = (Keyboard)newValue;
+        }
+
 
         #endregion
     }

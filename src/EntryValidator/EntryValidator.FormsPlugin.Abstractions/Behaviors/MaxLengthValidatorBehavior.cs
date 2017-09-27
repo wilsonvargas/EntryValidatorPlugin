@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
 {
-    public class MaxLengthValidator : Behavior<Entry>
+    public class MaxLengthValidatorBehavior : Behavior<Entry>
     {
-        public static readonly BindableProperty MaxLengthProperty = BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidator), 0);
+        public static readonly BindableProperty MaxLengthProperty = BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidatorBehavior), 0);
 
-        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(EmailValidatorBehavior), false);
+        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(MaxLengthValidatorBehavior), false);
 
         public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
 
@@ -21,7 +21,7 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
             private set { base.SetValue(IsValidPropertyKey, value); }
         }
 
-        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(EmailValidatorBehavior), false);
+        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(MaxLengthValidatorBehavior), false);
 
         public static readonly BindableProperty IsInvalidProperty = IsInvalidPropertyKey.BindableProperty;
 

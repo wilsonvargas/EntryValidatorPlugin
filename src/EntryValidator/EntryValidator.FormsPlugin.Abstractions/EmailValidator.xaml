@@ -16,7 +16,7 @@
                 <Entry x:Name="email" Text="{Binding Text, Source={x:Reference emailBehavior}}" 
                        PlaceholderColor="Gray" 
                        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference emailBehavior}}"
-                       Keyboard="Email" Placeholder="{Binding PlaceHolder, Source={x:Reference emailBehavior}}" HorizontalTextAlignment="Start">
+                       Keyboard="{Binding Keyboard, Source={x:Reference emailBehavior}}" Placeholder="{Binding PlaceHolder, Source={x:Reference emailBehavior}}" HorizontalTextAlignment="Start">
                     <Entry.Behaviors>
                         <validator:EmailValidatorBehavior x:Name="emailValidator"/>
                     </Entry.Behaviors>
