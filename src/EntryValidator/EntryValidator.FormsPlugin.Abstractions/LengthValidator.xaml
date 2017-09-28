@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:validator="clr-namespace:EntryValidator.FormsPlugin.Abstractions.Behaviors"
              xmlns:converters="clr-namespace:EntryValidator.FormsPlugin.Abstractions.Converters"
-             x:Class="EntryValidator.FormsPlugin.Abstractions.MaxLengthValidator"
-             x:Name="maxLengthBehavior">
+             x:Class="EntryValidator.FormsPlugin.Abstractions.LengthValidator"
+             x:Name="lengthBehavior">
     <ContentView.Resources>
         <ResourceDictionary>
             <converters:BooleanToSource x:Key="BooleanToSource"/>
@@ -13,27 +13,27 @@
     <ContentView.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="maxLength" Text="{Binding Text, Source={x:Reference maxLengthBehavior}}" Keyboard="{Binding Keyboard, Source={x:Reference maxLengthBehavior}}"
-                       HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference maxLengthBehavior}}"
-                       Placeholder="{Binding PlaceHolder, Source={x:Reference maxLengthBehavior}}"
+                <Entry x:Name="length" Text="{Binding Text, Source={x:Reference lengthBehavior}}" Keyboard="{Binding Keyboard, Source={x:Reference lengthBehavior}}"
+                       HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference lengthBehavior}}"
+                       Placeholder="{Binding PlaceHolder, Source={x:Reference lengthBehavior}}"
                        HorizontalTextAlignment="Start">
                     <Entry.Behaviors>
-                        <validator:MaxLengthValidatorBehavior x:Name="maxLenghtValidator" MaxLength="{Binding MaxLength, Source={x:Reference maxLengthBehavior}}"/>
+                        <validator:LengthValidatorBehavior x:Name="lenghtValidator" Length="{Binding Length, Source={x:Reference lengthBehavior}}"/>
                     </Entry.Behaviors>
                 </Entry>
                 <StackLayout x:Name="image">
-                    <Image Source="{Binding Source={x:Reference maxLenghtValidator},
+                    <Image Source="{Binding Source={x:Reference lenghtValidator},
                            Path=IsValid,
                            Converter={StaticResource BooleanToSource}}"
                            HeightRequest="30"
                            VerticalOptions="Center"
-                           IsVisible="{Binding Source={x:Reference maxLenghtValidator}, Path=IsValid}"/>
+                           IsVisible="{Binding Source={x:Reference lengthBehavior}, Path=IsValid}"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="error">
-                <Label x:Name="messagaError" Text="{Binding MessageError, Source={x:Reference maxLengthBehavior}}" 
-                   FontSize="Micro" IsVisible="{Binding Source={x:Reference maxLenghtValidator}, Path=IsInvalid}" 
-                   TextColor="{Binding ErrorMessageColor, Source={x:Reference maxLengthBehavior}}"/>
+                <Label x:Name="messagaError" Text="{Binding MessageError, Source={x:Reference lengthBehavior}}" 
+                   FontSize="Micro" IsVisible="{Binding Source={x:Reference lenghtValidator}, Path=IsInvalid}" 
+                   TextColor="{Binding ErrorMessageColor, Source={x:Reference lengthBehavior}}"/>
             </StackLayout>
         </StackLayout>
     </ContentView.Content>

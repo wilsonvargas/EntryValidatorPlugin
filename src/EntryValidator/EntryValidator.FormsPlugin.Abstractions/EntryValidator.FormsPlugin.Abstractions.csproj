@@ -37,21 +37,22 @@
     <DocumentationFile>bin\Release\EntryValidator.FormsPlugin.Abstractions.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\CompareValidationBehavior.cs" />
     <Compile Include="Behaviors\EmailValidatorBehavior.cs" />
-    <Compile Include="Behaviors\MaxLengthValidatorBehavior.cs" />
+    <Compile Include="Behaviors\LengthValidatorBehavior.cs" />
     <Compile Include="Behaviors\PasswordValidatorBehavior.cs" />
+    <Compile Include="CompareValidator.xaml.cs">
+      <DependentUpon>CompareValidator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\BooleanToSource.cs" />
     <Compile Include="Converters\SecurityToStringConverter.cs" />
     <Compile Include="EmailValidator.xaml.cs">
       <DependentUpon>EmailValidator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MaxLengthValidator.xaml.cs">
-      <DependentUpon>MaxLengthValidator.xaml</DependentUpon>
+    <Compile Include="LengthValidator.xaml.cs">
+      <DependentUpon>LengthValidator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enums\Security.cs" />
-    <Compile Include="PasswordValidator.xaml.cs">
-      <DependentUpon>PasswordValidator.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,18 +80,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MaxLengthValidator.xaml">
+    <EmbeddedResource Include="LengthValidator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PasswordValidator.xaml">
+    <EmbeddedResource Include="CompareValidator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.1.6505\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

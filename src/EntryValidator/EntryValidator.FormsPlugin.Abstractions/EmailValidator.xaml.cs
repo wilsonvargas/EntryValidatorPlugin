@@ -102,22 +102,22 @@ namespace EntryValidator.FormsPlugin.Abstractions
             control.image.IsVisible = Convert.ToBoolean(newValue.ToString());
         }
 
-        public bool ShowMessage
+        public bool ShowMessageError
         {
-            get { return Convert.ToBoolean(GetValue(ShowMessageProperty).ToString()); }
-            set { base.SetValue(ShowMessageProperty, value); }
+            get { return Convert.ToBoolean(GetValue(ShowMessageErrorProperty).ToString()); }
+            set { base.SetValue(ShowMessageErrorProperty, value); }
         }
 
-        private static BindableProperty ShowMessageProperty = BindableProperty.Create(
-                                                         propertyName: "ShowMessage",
+        private static BindableProperty ShowMessageErrorProperty = BindableProperty.Create(
+                                                         propertyName: "ShowMessageError",
                                                          returnType: typeof(bool),
                                                          declaringType: typeof(EmailValidator),
                                                          defaultValue: true,
                                                          defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: ShowMessagePropertyChanged);
+                                                         propertyChanged: ShowMessageErrorPropertyChanged);
 
 
-        private static void ShowMessagePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void ShowMessageErrorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var control = (EmailValidator)bindable;
             control.error.IsVisible = Convert.ToBoolean(newValue.ToString());
@@ -157,7 +157,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
                                                          declaringType: typeof(EmailValidator),
                                                          defaultValue: LayoutOptions.FillAndExpand,
                                                          defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: ShowMessagePropertyChanged);
+                                                         propertyChanged: ShowMessageErrorPropertyChanged);
 
 
         private static void HorizontalOptionsPropertyChanged(BindableObject bindable, object oldValue, object newValue)

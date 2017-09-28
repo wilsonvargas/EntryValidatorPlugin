@@ -7,11 +7,11 @@ using Xamarin.Forms;
 
 namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
 {
-    public class MaxLengthValidatorBehavior : Behavior<Entry>
+    public class LengthValidatorBehavior : Behavior<Entry>
     {
-        public static readonly BindableProperty MaxLengthProperty = BindableProperty.Create("MaxLength", typeof(int), typeof(MaxLengthValidatorBehavior), 0);
+        public static readonly BindableProperty LengthProperty = BindableProperty.Create("Length", typeof(int), typeof(LengthValidatorBehavior), 0);
 
-        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(MaxLengthValidatorBehavior), false);
+        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(LengthValidatorBehavior), false);
 
         public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
 
@@ -21,7 +21,7 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
             private set { base.SetValue(IsValidPropertyKey, value); }
         }
 
-        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(MaxLengthValidatorBehavior), false);
+        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(LengthValidatorBehavior), false);
 
         public static readonly BindableProperty IsInvalidProperty = IsInvalidPropertyKey.BindableProperty;
 
@@ -31,10 +31,10 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
             private set { base.SetValue(IsInvalidPropertyKey, value); }
         }
 
-        public int MaxLength
+        public int Length
         {
-            get { return (int)GetValue(MaxLengthProperty); }
-            set { SetValue(MaxLengthProperty, value); }
+            get { return (int)GetValue(LengthProperty); }
+            set { SetValue(LengthProperty, value); }
         }
 
         protected override void OnAttachedTo(Entry bindable)
@@ -45,8 +45,8 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
         private void bindable_TextChanged(object sender, TextChangedEventArgs e)
         {
             //if (MaxLength != null && MaxLength.HasValue)
-            IsInvalid = (e.NewTextValue.Length > 0 && e.NewTextValue.Length > MaxLength);
-            IsValid = !(e.NewTextValue.Length > 0 && e.NewTextValue.Length > MaxLength);
+            IsInvalid = !(e.NewTextValue.Length > 0 && e.NewTextValue.Length == Length);
+            IsValid = (e.NewTextValue.Length > 0 && e.NewTextValue.Length == Length);
         }
 
         protected override void OnDetachingFrom(Entry bindable)

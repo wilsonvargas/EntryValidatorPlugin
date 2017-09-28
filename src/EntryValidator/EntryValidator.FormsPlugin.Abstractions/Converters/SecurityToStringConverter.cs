@@ -30,9 +30,6 @@ namespace EntryValidator.FormsPlugin.Abstractions.Converters
                     result = "";
                     break;
             }
-            Debug.WriteLine("*********************************");
-            Debug.WriteLine(value.ToString());
-            Debug.WriteLine("*********************************");
             return result;
         }
 

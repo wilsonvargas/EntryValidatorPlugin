@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace EntryValidator.FormsPlugin.Abstractions
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MaxLengthValidator : ContentView
+	public partial class LengthValidator : ContentView
 	{
-		public MaxLengthValidator ()
+		public LengthValidator()
 		{
 			InitializeComponent ();
 		}
@@ -27,7 +27,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty TextProperty = BindableProperty.Create(
                                                          propertyName: "Text",
                                                          returnType: typeof(string),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: "",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: TextPropertyChanged);
@@ -36,8 +36,8 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void TextPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
-            control.maxLength.Text = newValue.ToString();
+            var control = (LengthValidator)bindable;
+            control.length.Text = newValue.ToString();
         }
 
         public string PlaceHolder
@@ -49,7 +49,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty PlaceHolderProperty = BindableProperty.Create(
                                                          propertyName: "PlaceHolder",
                                                          returnType: typeof(string),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: "Text",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: PlaceHolderPropertyChanged);
@@ -57,29 +57,29 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void PlaceHolderPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
-            control.maxLength.Placeholder = newValue.ToString();
+            var control = (LengthValidator)bindable;
+            control.length.Placeholder = newValue.ToString();
         }
 
-        public string MaxLength
+        public string Length
         {
-            get { return base.GetValue(MaxLengthProperty).ToString(); }
-            set { base.SetValue(MaxLengthProperty, value); }
+            get { return base.GetValue(LengthProperty).ToString(); }
+            set { base.SetValue(LengthProperty, value); }
         }
 
-        private static BindableProperty MaxLengthProperty = BindableProperty.Create(
-                                                         propertyName: "MaxLength",
+        private static BindableProperty LengthProperty = BindableProperty.Create(
+                                                         propertyName: "Length",
                                                          returnType: typeof(string),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: "",
                                                          defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: MaxLengthPropertyChanged);
+                                                         propertyChanged: LengthPropertyChanged);
 
 
-        private static void MaxLengthPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void LengthPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
-            control.maxLenghtValidator.MaxLength = Convert.ToInt32(newValue.ToString());
+            var control = (LengthValidator)bindable;
+            control.lenghtValidator.Length = Convert.ToInt32(newValue.ToString());
         }
 
         public string MessageError
@@ -91,15 +91,15 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty MessageErrorProperty = BindableProperty.Create(
                                                          propertyName: "MessageError",
                                                          returnType: typeof(string),
-                                                         declaringType: typeof(MaxLengthValidator),
-                                                         defaultValue: "You have exceeded max length.",
+                                                         declaringType: typeof(LengthValidator),
+                                                         defaultValue: "Enter a valid value.",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: MessageErrorPropertyChanged);
 
 
         private static void MessageErrorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
+            var control = (LengthValidator)bindable;
             control.messagaError.Text = newValue.ToString();
         }
 
@@ -112,7 +112,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty ShowIconProperty = BindableProperty.Create(
                                                          propertyName: "ShowIcon",
                                                          returnType: typeof(bool),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: true,
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: ShowIconPropertyChanged);
@@ -120,28 +120,28 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void ShowIconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
+            var control = (LengthValidator)bindable;
             control.image.IsVisible = Convert.ToBoolean(newValue.ToString());
         }
 
-        public bool ShowMessage
+        public bool ShowMessageError
         {
-            get { return Convert.ToBoolean(GetValue(ShowMessageProperty).ToString()); }
-            set { base.SetValue(ShowMessageProperty, value); }
+            get { return Convert.ToBoolean(GetValue(ShowMessageErrorProperty).ToString()); }
+            set { base.SetValue(ShowMessageErrorProperty, value); }
         }
 
-        private static BindableProperty ShowMessageProperty = BindableProperty.Create(
-                                                         propertyName: "ShowMessage",
+        private static BindableProperty ShowMessageErrorProperty = BindableProperty.Create(
+                                                         propertyName: "ShowMessageError",
                                                          returnType: typeof(bool),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: true,
                                                          defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: ShowMessagePropertyChanged);
+                                                         propertyChanged: ShowMessageErrorPropertyChanged);
 
 
-        private static void ShowMessagePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void ShowMessageErrorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
+            var control = (LengthValidator)bindable;
             control.error.IsVisible = Convert.ToBoolean(newValue.ToString());
         }
 
@@ -154,7 +154,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty ErrorMessageColorProperty = BindableProperty.Create(
                                                          propertyName: "ErrorMessageColor",
                                                          returnType: typeof(Color),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: Color.Red,
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: ErrorMessageColorPropertyChanged);
@@ -162,7 +162,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void ErrorMessageColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
+            var control = (LengthValidator)bindable;
             control.messagaError.TextColor = (Color)newValue;
         }
 
@@ -176,7 +176,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty HorizontalOptionsProperty = BindableProperty.Create(
                                                          propertyName: "HorizontalOptions",
                                                          returnType: typeof(LayoutOptions),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: LayoutOptions.FillAndExpand,
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: HorizontalOptionsPropertyChanged);
@@ -184,8 +184,8 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void HorizontalOptionsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
-            control.maxLength.HorizontalOptions = (LayoutOptions)newValue;
+            var control = (LengthValidator)bindable;
+            control.length.HorizontalOptions = (LayoutOptions)newValue;
         }
 
 
@@ -199,7 +199,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
         private static BindableProperty KeyboardProperty = BindableProperty.Create(
                                                          propertyName: "Keyboard",
                                                          returnType: typeof(Keyboard),
-                                                         declaringType: typeof(MaxLengthValidator),
+                                                         declaringType: typeof(LengthValidator),
                                                          defaultValue: Keyboard.Default,
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: KeyboardPropertyChanged);
@@ -207,9 +207,12 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
         private static void KeyboardPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (MaxLengthValidator)bindable;
-            control.maxLength.Keyboard = (Keyboard)newValue;
+            var control = (LengthValidator)bindable;
+            control.length.Keyboard = (Keyboard)newValue;
         }
+
+
+       
 
         #endregion
     }

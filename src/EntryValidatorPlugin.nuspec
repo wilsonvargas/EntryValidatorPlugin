@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Plugins.Forms.EntryValidator</id>
-    <version>1.0.25</version>
+    <version>1.0.33</version>
     <title>Entry Validator Control Plugin for Xamarin.Forms</title>
     <authors>Wilson Vargas</authors>
     <owners>Wilson Vargas</owners>
