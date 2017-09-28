@@ -21,7 +21,7 @@ You do not need to initialize this component.
 ### UWP
 You do not need to initialize this component.
 
-![uwp](https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/images/uwp.png)
+![uwp](https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/images/UWP.png)
 
 
 **Platform Support**
