@@ -71,7 +71,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
                                                          propertyName: "MessageError",
                                                          returnType: typeof(string),
                                                          declaringType: typeof(CompareValidator),
-                                                         defaultValue: "Enter a valid email.",
+                                                         defaultValue: "Enter same value as above.",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: MessageErrorPropertyChanged);
 
@@ -80,27 +80,6 @@ namespace EntryValidator.FormsPlugin.Abstractions
         {
             var control = (CompareValidator)bindable;
             control.messagaError.Text = newValue.ToString();
-        }
-
-        public bool ShowIcon
-        {
-            get { return Convert.ToBoolean(GetValue(ShowIconProperty).ToString()); }
-            set { base.SetValue(ShowIconProperty, value); }
-        }
-
-        private static BindableProperty ShowIconProperty = BindableProperty.Create(
-                                                         propertyName: "ShowIcon",
-                                                         returnType: typeof(bool),
-                                                         declaringType: typeof(CompareValidator),
-                                                         defaultValue: true,
-                                                         defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: ShowIconPropertyChanged);
-
-
-        private static void ShowIconPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var control = (CompareValidator)bindable;
-            control.image.IsVisible = Convert.ToBoolean(newValue.ToString());
         }
 
         public bool ShowMessageError
@@ -266,7 +245,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
                                                          propertyName: "CompareEntryPlaceHolder",
                                                          returnType: typeof(string),
                                                          declaringType: typeof(CompareValidator),
-                                                         defaultValue: "Enter same as above",
+                                                         defaultValue: "Enter same as above.",
                                                          defaultBindingMode: BindingMode.TwoWay,
                                                          propertyChanged: CompareEntryPlaceHolderPropertyChanged);
 

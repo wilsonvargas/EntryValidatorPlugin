@@ -1,5 +1,4 @@
-﻿using EntryValidator.FormsPlugin.Abstractions.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,8 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
 {
     public class PasswordValidatorBehavior : Behavior<Entry>
     {
-        public static readonly BindableProperty SecurityProperty = BindableProperty.Create("Security", typeof(string), typeof(PasswordValidatorBehavior), 0);
+
+        const string passwordRegex = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$";
 
         static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(PasswordValidatorBehavior), false);
 
@@ -33,11 +33,6 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
             private set { base.SetValue(IsInvalidPropertyKey, value); }
         }
 
-        public string Security
-        {
-            get { return GetValue(SecurityProperty).ToString(); }
-            set { SetValue(SecurityProperty, value); }
-        }
 
         protected override void OnAttachedTo(Entry bindable)
         {
@@ -46,8 +41,8 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
 
         void HandleTextChanged(object sender, TextChangedEventArgs e)
         {
-            IsValid = (Regex.IsMatch(e.NewTextValue, Security, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
-            IsInvalid = !(Regex.IsMatch(e.NewTextValue, Security, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
+            IsValid = (Regex.IsMatch(e.NewTextValue, passwordRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
+            IsInvalid = !(Regex.IsMatch(e.NewTextValue, passwordRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
         }
 
         protected override void OnDetachingFrom(Entry bindable)

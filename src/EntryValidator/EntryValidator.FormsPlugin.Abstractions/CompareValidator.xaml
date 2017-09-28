@@ -13,9 +13,9 @@
     <ContentView.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" HorizontalOptions="{Binding CompareEntryHorizontalOptions, Source={x:Reference compareBehavior}}">
                     <Entry x:Name="firstText" Text="{Binding FirstEntryText, Source={x:Reference compareBehavior}}" Keyboard="{Binding FirstEntryKeyboard, Source={x:Reference compareBehavior}}"
-                       HorizontalOptions="{Binding FirsEntryHorizontalOptions, Source={x:Reference compareBehavior}}"
+                       HorizontalOptions="{Binding FirstEntryHorizontalOptions, Source={x:Reference compareBehavior}}"
                        Placeholder="{Binding FirstEntryPlaceHolder, Source={x:Reference compareBehavior}}"
                        IsPassword="{Binding FirstEntryIsPassword, Source={x:Reference compareBehavior}}"
                        HorizontalTextAlignment="Start"/>
@@ -26,23 +26,17 @@
                        IsPassword="{Binding CompareEntryIsPassword, Source={x:Reference compareBehavior}}"
                        HorizontalTextAlignment="Start">
                         <Entry.Behaviors>
-                            <validator:CompareValidationBehavior BindingContext="{x:Reference firstText}" Text="{Binding CompareEntryText}"/>
+                            <validator:CompareValidationBehavior x:Name="compareValidator" BindingContext="{x:Reference firstText}" Text="{Binding Text}"/>
                         </Entry.Behaviors>
                     </Entry>
-                </StackLayout>
-                <StackLayout x:Name="image">
-                    <Image Source="{Binding Source={x:Reference lenghtValidator},
-                           Path=IsValid,
-                           Converter={StaticResource BooleanToSource}}"
-                           HeightRequest="30"
-                           VerticalOptions="Center"
-                           IsVisible="{Binding Source={x:Reference lengthBehavior}, Path=IsValid}"/>
+
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="error">
-                <Label x:Name="messagaError" Text="{Binding MessageError, Source={x:Reference lengthBehavior}}" 
-                   FontSize="Micro" IsVisible="{Binding Source={x:Reference lenghtValidator}, Path=IsInvalid}" 
-                   TextColor="{Binding ErrorMessageColor, Source={x:Reference lengthBehavior}}"/>
+                <Label x:Name="messagaError" Text="{Binding MessageError, Source={x:Reference compareBehavior}}" 
+                   FontSize="Micro" IsVisible="{Binding Source={x:Reference compareValidator}, Path=IsInvalid}" 
+                   TextColor="{Binding ErrorMessageColor, Source={x:Reference compareBehavior}}"/>
+               
             </StackLayout>
         </StackLayout>
     </ContentView.Content>

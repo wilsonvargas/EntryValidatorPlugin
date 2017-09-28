@@ -9,11 +9,11 @@ namespace EntryValidator.FormsPlugin.Abstractions.Behaviors
 {
     public class CompareValidationBehavior : Behavior<Entry>
     {
-        public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(int), typeof(LengthValidatorBehavior), 0);
+        public static readonly BindableProperty TextProperty = BindableProperty.Create("Text", typeof(string), typeof(CompareValidationBehavior), "");
 
-        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(LengthValidatorBehavior), false);
+        static readonly BindablePropertyKey IsValidPropertyKey = BindableProperty.CreateReadOnly("IsValid", typeof(bool), typeof(CompareValidationBehavior), false);
 
-        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(LengthValidatorBehavior), false);
+        static readonly BindablePropertyKey IsInvalidPropertyKey = BindableProperty.CreateReadOnly("IsInvalid", typeof(bool), typeof(CompareValidationBehavior), false);
 
         public static readonly BindableProperty IsValidProperty = IsValidPropertyKey.BindableProperty;
 

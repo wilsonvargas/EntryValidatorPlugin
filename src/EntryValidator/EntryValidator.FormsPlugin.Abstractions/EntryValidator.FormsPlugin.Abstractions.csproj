@@ -52,7 +52,9 @@
     <Compile Include="LengthValidator.xaml.cs">
       <DependentUpon>LengthValidator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Enums\Security.cs" />
+    <Compile Include="PasswordValidator.xaml.cs">
+      <DependentUpon>PasswordValidator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CompareValidator.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PasswordValidator.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
