@@ -1,0 +1,15 @@
+language: csharp
+solution: .\src\EntryValidator.sln
+install:
+  - sudo apt-get install -y gtk-sharp2
+  - nuget restore solution-name.sln
+os: Visual Studio 2017
+configuration: Release
+environment:
+  xamarin_email:
+    secure: 9m3w9MDhygHBFKSw3mYDIf9y7vlNtH/GrBBbN66ddTA=
+  xamarin_password:
+secure: YDHLmeqVaqqAcAweIFFTRQ==
+before_build:
+- ps: >-
+    nuget restore .\src\EntryValidator.sln
