@@ -8,26 +8,20 @@ Simple but elegant way of validate what your users write in your Xamarin.Forms p
 ### Android
 You do not need to initialize this component.
 
-<img alt="android" src="http://l7c.us/descargas/images/android.png" 
-data-canonical-src="http://l7c.us/descargas/images/android.png"
- width="250" height="480" />
+![android](https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/images/Android.png)
 
 
 ### iOS
 You do not need to initialize this component.
 
 
-<img alt="ios" src="http://l7c.us/descargas/images/android.png" 
-data-canonical-src="http://l7c.us/descargas/images/android.png"
- width="250" height="480" />
+![ios](https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/images/iOS.png)
 
 
 ### UWP
 You do not need to initialize this component.
 
-<img alt="android" src="http://l7c.us/descargas/images/android.png" 
-data-canonical-src="http://l7c.us/descargas/images/android.png"
- width="250" height="480" />
+![uwp](https://raw.githubusercontent.com/wilsonvargas/EntryValidatorPlugin/master/images/uwp.png)
 
 
 **Platform Support**
