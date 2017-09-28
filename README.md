@@ -43,7 +43,7 @@ Instead of using an Entry simply use a ValidatorEntry instead!
 You **MUST** set the Length value if your control is a LenghtValidator.
 
 You can also:
-* Change color of error message and customize its content.
+* Change color of error message and customize their content.
 * Change placeholder.
 * Choose if success icon is displayed.
 * Choose if error message is displayed.
