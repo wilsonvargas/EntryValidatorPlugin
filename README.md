@@ -2,7 +2,9 @@
 Simple but secure way of display Entries validators in your Xamarin.Forms projects. 
 
 **Platform Support**
-|Platform|Supported|Version|| ------------------- | :-----------: | :------------------: ||Xamarin.iOS|Yes|iOS 7+||Xamarin.Android|Yes|API 14+||Windows Phone Silverlight|No||Windows Phone RT|No||Windows Store RT|Yes||Windows 10 UWP|Yes||Xamarin.Mac|No||
+|Platform|Supported|Version|
+| ------------------- | :-----------: | :------------------: |
+|Xamarin.iOS|Yes|iOS 7+||Xamarin.Android|Yes|API 14+||Windows Phone Silverlight|No||Windows Phone RT|No||Windows Store RT|Yes||Windows 10 UWP|Yes||Xamarin.Mac|No||
 
 #### Usage Instead of using an Entry simply use a EmailValidator instead!
 
