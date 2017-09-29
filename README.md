@@ -2,7 +2,7 @@
 
 Simple but elegant way of validate what your users write in your Xamarin.Forms projects. 
 
-Build status: [![Build status](https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true)](https://ci.appveyor.com/project/wilsonvargas/entryvalidatorplugin)
+Build status: [![Build status](https://ci.appveyor.com/api/projects/status/nsvc82cq8gsxs3cy?svg=true)](https://ci.appveyor.com/project/wilsonvargas/entryvalidatorplugin)
 
 #### Setup
 * Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/Plugins.Forms.EntryValidator.svg?label=NuGet)](https://www.nuget.org/packages/Plugins.Forms.EntryValidator/)
