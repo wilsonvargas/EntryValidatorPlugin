@@ -13,7 +13,7 @@
     <ContentView.Content>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="email" Text="{Binding Text, Source={x:Reference emailBehavior}}" 
+                <Entry x:Name="email" Text="{Binding Text}"
                        PlaceholderColor="Gray" 
                        HorizontalOptions="{Binding HorizontalOptions, Source={x:Reference emailBehavior}}"
                        Keyboard="{Binding Keyboard, Source={x:Reference emailBehavior}}" Placeholder="{Binding PlaceHolder, Source={x:Reference emailBehavior}}" HorizontalTextAlignment="Start">

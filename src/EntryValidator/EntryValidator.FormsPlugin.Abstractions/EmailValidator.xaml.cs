@@ -1,6 +1,8 @@
-﻿using System;
+﻿using EntryValidator.FormsPlugin.Abstractions.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,32 +14,15 @@ namespace EntryValidator.FormsPlugin.Abstractions
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EmailValidator : ContentView
     {
+        EmailValidatorViewModel viewModel;
         public EmailValidator()
         {
             InitializeComponent();
+            BindingContext = viewModel = new EmailValidatorViewModel();
         }
 
         #region BindableProperties
-        public string Text
-        {
-            get { return base.GetValue(TextProperty).ToString(); }
-            set { base.SetValue(TextProperty, value); }
-        }
-
-        private static BindableProperty TextProperty = BindableProperty.Create(
-                                                         propertyName: "Text",
-                                                         returnType: typeof(string),
-                                                         declaringType: typeof(EmailValidator),
-                                                         defaultValue: "",
-                                                         defaultBindingMode: BindingMode.TwoWay,
-                                                         propertyChanged: TextPropertyChanged);
-
-
-        private static void TextPropertyChanged(BindableObject bindable, object oldValue, object newValue)
-        {
-            var control = (EmailValidator)bindable;
-            control.email.Text = newValue.ToString();
-        }
+        
 
         public string PlaceHolder
         {
@@ -189,5 +174,7 @@ namespace EntryValidator.FormsPlugin.Abstractions
 
 
         #endregion
+
+        
     }
 }

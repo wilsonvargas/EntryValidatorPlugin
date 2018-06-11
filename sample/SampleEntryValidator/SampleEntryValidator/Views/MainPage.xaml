@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SampleEntryValidator"
+             xmlns:validator="clr-namespace:EntryValidator.FormsPlugin.Abstractions;assembly=EntryValidator.FormsPlugin.Abstractions"
+             x:Class="SampleEntryValidator.Views.MainPage">
+
+    <ScrollView>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <!--<Label Text="Name" FontSize="Small" />
+            <Entry Placeholder="Enter Your Name" Text="{Binding Name}" />
+            <Label Text="Credit Card" FontSize="Small" />
+            <validator:LengthValidator x:Name="length" Text="{Binding CreditCard}" PlaceHolder="Enter number of your credit card" MessageError="Your credit card number must has 16 characters." VerticalOptions="CenterAndExpand" Length="16"/>
+            <Label Text="Compare Text" FontSize="Small" />
+            <validator:CompareValidator VerticalOptions="CenterAndExpand" CompareEntryText="{Binding TextCompared}" FirstEntryPlaceHolder="Enter your email"/>-->
+            <Label Text="Email" FontSize="Small" />
+            <validator:EmailValidator x:Name="entryEmail" Text="{Binding Text}"/>
+            <!--<Label Text="Password" FontSize="Small" />
+            <validator:PasswordValidator Text="{Binding Password}" MessageError="Your password must contain at least one number and a symbol."/>-->
+            <Button Text="Register" Clicked="Button_Clicked" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
