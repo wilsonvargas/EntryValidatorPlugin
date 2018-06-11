@@ -2,10 +2,10 @@
 
 Simple but elegant way of validate what your users write in your Xamarin.Forms projects. 
 
-Build status: [![Build status](https://ci.appveyor.com/api/projects/status/nsvc82cq8gsxs3cy?svg=true)](https://ci.appveyor.com/project/wilsonvargas/entryvalidatorplugin)
+[![Build status](https://ci.appveyor.com/api/projects/status/nsvc82cq8gsxs3cy?svg=true)](https://ci.appveyor.com/project/wilsonvargas/entryvalidatorplugin) [![NuGet](https://img.shields.io/nuget/v/Plugins.Forms.EntryValidator.svg?label=NuGet)](https://www.nuget.org/packages/Plugins.Forms.EntryValidator/) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/wilsondonations/5)
 
 #### Setup
-* Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/Plugins.Forms.EntryValidator.svg?label=NuGet)](https://www.nuget.org/packages/Plugins.Forms.EntryValidator/)
+* Available on NuGet [Plugins.Forms.EntryValidator](https://www.nuget.org/packages/Plugins.Forms.EntryValidator/)
 * Install into your PCL project and Client projects.
 
 ### Android
